@@ -10,7 +10,7 @@ import {slideDownUp} from '../message.animation';
 })
 export class MessageGeneratorComponent implements OnInit {
   private messages: Array<Message> = [];
-  @Output() navigateTo: EventEmitter<string> = new EventEmitter();
+  @Output() getUrl: EventEmitter<string> = new EventEmitter();
 
   private static isExternal(url): boolean {
     const match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
@@ -41,7 +41,6 @@ export class MessageGeneratorComponent implements OnInit {
     if (!!message) {
       return `alert-${message.type.toLowerCase()}`;
     }
-    return false;
   }
 
   animationDone(event, innerHtml) {
@@ -57,7 +56,7 @@ export class MessageGeneratorComponent implements OnInit {
           } else {
             anchorElement.addEventListener('click', e => {
               e.preventDefault();
-              this.navigateTo.emit(anchorElement.getAttribute('href'));
+              this.getUrl.emit(anchorElement.getAttribute('href'));
             });
           }
         });
