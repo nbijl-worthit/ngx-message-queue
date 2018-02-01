@@ -8,8 +8,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-
   static getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
