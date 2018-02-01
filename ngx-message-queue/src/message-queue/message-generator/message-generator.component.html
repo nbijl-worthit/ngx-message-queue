@@ -1,5 +1,11 @@
 <ng-container *ngIf="messages.length > 0">
-  <div [class]="'alert ' + getMessageTypeClass(message)" *ngFor="let message of messages" [@slideDownUp] (@slideDownUp.done)="animationDone($event, content)" role="alert">
-    <span #content [innerHtml]="message.body"></span>
+  <div [@slideDownUp]="messages.length" (@slideDownUp.done)="animationDone($event, content)">
+    <div *ngFor="let message of messages"
+         [@slideDownUp]
+         (@slideDownUp.done)="animationDone($event, content)">
+      <div [class]="'alert ' + getMessageTypeClass(message)" role="alert">
+        <span #content [innerHtml]="message.body"></span>
+      </div>
+    </div>
   </div>
 </ng-container>

@@ -1,10 +1,10 @@
 {
   "name": "@worth/ngx-message-queue",
-  "version": "0.0.2",
-  "author": "",
+  "version": "0.0.4",
+  "author": "Elvis Furcic",
   "license": "MIT",
   "private": false,
-  "dependencies": {
+  "peerDependencies": {
     "@angular/core": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/platform-browser": "^5.0.0",
@@ -20,8 +20,21 @@
     }
   },
   "description": "An Angular 5+ message generator to show alerts wherever you want",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/worthinternetsystems/ngx-message-queue.git"
+  },
+  "keywords": [
+    "ngx",
+    "message",
+    "queue",
+    "timed"
+  ],
+  "bugs": {
+    "url": "https://github.com/worthinternetsystems/ngx-message-queue/issues"
+  },
+  "homepage": "https://github.com/worthinternetsystems/ngx-message-queue#readme"
 }

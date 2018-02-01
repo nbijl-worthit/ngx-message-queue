@@ -10,7 +10,7 @@ import {slideDownUp} from '../message.animation';
 })
 export class MessageGeneratorComponent implements OnInit {
   private messages: Array<Message> = [];
-  @Output() getUrl: EventEmitter<string> = new EventEmitter();
+  @Output() linkUrl: EventEmitter<string> = new EventEmitter();
 
   private static isExternal(url): boolean {
     const match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
@@ -56,7 +56,7 @@ export class MessageGeneratorComponent implements OnInit {
           } else {
             anchorElement.addEventListener('click', e => {
               e.preventDefault();
-              this.getUrl.emit(anchorElement.getAttribute('href'));
+              this.linkUrl.emit(anchorElement.getAttribute('href'));
             });
           }
         });

@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "build:lib": "rimraf ngx-message-queue/dist && rimraf ngx-message-queue/*.tgz && ng-packagr -p ngx-message-queue/package.json && cd ngx-message-queue/ && npm pack dist/",
+    "build:lib": "rimraf $npm_package_name/dist && rimraf $npm_package_name/*.tgz && ng-packagr -p $npm_package_name/package.json && cd $npm_package_name/ && npm pack dist/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

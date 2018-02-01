@@ -4,7 +4,7 @@ const TIMINGS = '275ms';
 
 export const slideDownUp: AnimationTriggerMetadata =
   trigger('slideDownUp', [
-    transition('void => *', [
+    transition('* => *', [
       query(':enter', style({
         display: 'block',
         height: 0,
@@ -24,9 +24,7 @@ export const slideDownUp: AnimationTriggerMetadata =
           marginBottom: '*',
           opacity: 1,
         }))
-      ]), {optional: true})
-    ]),
-    transition('* => void', [
+      ]), {optional: true}),
       query(':leave', style({
         height: '*',
         overflow: 'hidden',
