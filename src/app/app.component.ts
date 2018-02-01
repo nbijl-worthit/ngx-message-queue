@@ -10,9 +10,7 @@ import {Router} from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private messageService: MessageService, private router: Router) {
-
-  }
+  constructor(private messageService: MessageService, private router: Router) {}
 
   ngOnInit() {
     this.messageService.show(MessageType.SUCCESS, 'This is a test message. Hello world!');
