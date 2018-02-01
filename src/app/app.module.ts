@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
+import {RouterModule} from '@angular/router';
+import {MessageQueueModule} from '../../ngx-message-queue/dist';
 
 
 @NgModule({
@@ -10,9 +12,15 @@ import {AppComponent} from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: 'home', component: AppComponent},
+      {path: '', component: AppComponent},
+    ]),
+    MessageQueueModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

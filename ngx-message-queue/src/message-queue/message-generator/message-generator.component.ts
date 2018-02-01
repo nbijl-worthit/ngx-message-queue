@@ -1,16 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Message} from '../message';
 import {MessageService} from '../message.service';
 import {slideDownUp} from '../message.animation';
-import {Router} from '@angular/router';
 
 @Component({
-  selector: 'dg-message-generator',
+  selector: 'wis-message-generator',
   templateUrl: './message-generator.component.html',
   animations: [slideDownUp]
 })
 export class MessageGeneratorComponent implements OnInit {
-  @Input() messages: Array<Message> = [];
+  private messages: Array<Message> = [];
+  @Output() navigateTo: EventEmitter<string> = new EventEmitter();
 
   private static isExternal(url): boolean {
     const match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
@@ -28,13 +28,20 @@ export class MessageGeneratorComponent implements OnInit {
     }
   }
 
-  constructor(private messageService: MessageService, private router: Router) {
+  constructor(private messageService: MessageService) {
     this.messageService.messages.subscribe((messages: Array<Message>) => {
       this.messages = messages;
     });
   }
 
   ngOnInit() {
+  }
+
+  getMessageTypeClass(message) {
+    if (!!message) {
+      return `alert-${message.type.toLowerCase()}`;
+    }
+    return false;
   }
 
   animationDone(event, innerHtml) {
@@ -50,7 +57,7 @@ export class MessageGeneratorComponent implements OnInit {
           } else {
             anchorElement.addEventListener('click', e => {
               e.preventDefault();
-              this.router.navigateByUrl(anchorElement.getAttribute('href'));
+              this.navigateTo.emit(anchorElement.getAttribute('href'));
             });
           }
         });
