@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
       {type: MessageType.SUCCESS, body: 'This is a test message. Hello world!'},
       {type: MessageType.DARK, body: 'This is a test message. Hello world!'},
       {type: MessageType.LIGHT, body: 'This is a test message. Hello world!'},
-      {type: MessageType.INFO, body: '<a href="/home">Go to home</a> right now or <a href="https://worth.systems">Go to worth systems</a>ng ser'},
+      {type: MessageType.INFO, body: '<a href="/home">Go to home</a> right now or <a href="https://worth.systems">Go to worth systems</a>'},
       {type: MessageType.WARNING, body: '<a href="https://worth.systems">Go to worth systems</a>'},
       {type: MessageType.DANGER, body: 'This is a test message. Hello world!'},
       {type: MessageType.SECONDARY, body: 'This is a test message. Hello world!'},
