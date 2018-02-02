@@ -77,9 +77,9 @@ There are defined types that you can use for you message type. It's based on the
 - MessageType.DARK
 
 
-Online demo
+### Online demo
 
-Todo https://stackblitz.com demo [here](https://angular-e87jgx.stackblitz.io)!
+Demo available on stackblitz [here](https://angular-e87jgx.stackblitz.io)!
 
 
 Made with &#10084; by [Worth Internet Systems](http://worth.systems) front-end developers in the Netherlands
