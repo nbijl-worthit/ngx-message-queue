@@ -51,7 +51,7 @@ this.messageService.show(MessageType.SUCCESS, <a href="/home">Go to home</a> rig
 ```
 
 ### Define navigation
-If you use anchor links in your messages you can use the `[linkUrl]` input to get the url and navigate to a page. It automatically check if it's an external or internal link.
+If you use anchor links in your messages you can use the `(linkUrl)` output event to get the url and navigate to a page. It automatically check if it's an external or internal link.
 
 Define a function in the component where you placed your message generator component. Set it to be triggered by the component output event `(linkUrl)` and navigate to and url the usual way with the router module.
 
